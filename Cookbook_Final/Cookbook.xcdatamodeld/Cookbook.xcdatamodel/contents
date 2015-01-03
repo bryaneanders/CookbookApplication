@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="instructions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecipeCategory" inverseName="recipies" inverseEntity="RecipeCategory" syncable="YES"/>
+    </entity>
+    <entity name="RecipeCategory" representedClassName="RecipeCategory" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="header" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="recipies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Recipe" inverseName="category" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="RecipeCategory" positionX="97" positionY="-9" width="128" height="105"/>
+    </elements>
+</model>
